@@ -8,9 +8,13 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.yotabytes.talentpool.dao.TalentPoolDAO;
+import com.yotabytes.talentpool.model.CandidateInformation;
 import com.yotabytes.talentpool.model.TalentQuestion;
 import com.yotabytes.talentpool.util.AdminQueryConstant;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -20,13 +24,13 @@ public class DAOimplemaintation implements TalentPoolDAO {
 
 	@Autowired
 	public JdbcTemplate jdbcTemplate;
+	
+	
 
 	@Override
 	public List<TalentQuestion> getTalentQuestion() {
 
-		
 		String sql = AdminQueryConstant.GET_QUESTION;
-
 		List<TalentQuestion> questions = jdbcTemplate.query(sql, new RowMapper<TalentQuestion>() {
 
 			@Override
@@ -52,5 +56,6 @@ public class DAOimplemaintation implements TalentPoolDAO {
 		return questions;
 
 	}
+	
 
 }

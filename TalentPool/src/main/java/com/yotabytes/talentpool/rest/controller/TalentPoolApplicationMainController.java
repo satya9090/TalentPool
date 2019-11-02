@@ -1,52 +1,94 @@
 package com.yotabytes.talentpool.rest.controller;
 
-
-
-
-import com.yotabytes.talentpool.dao.*;
-import com.yotabytes.talentpool.model.*;
-import com.yotabytes.talentpool.service.TalentPoolService;
-
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
- 
+import org.springframework.web.servlet.ModelAndView;
+
+import com.yotabytes.talentpool.model.CandidateInformation;
+import com.yotabytes.talentpool.model.TalentQuestion;
+import com.yotabytes.talentpool.model.Talent_candidate_experience;
+import com.yotabytes.talentpool.service.TalentPoolService;
+
 @RestController
- 
+
 public class TalentPoolApplicationMainController {
- 
-    @Autowired
-    private TalentPoolService service;
- 
-    @RequestMapping("/")
-    @ResponseBody
-    public String welcome() {
-        return "Welcome to RestTemplate Example.";
-    }
-    @RequestMapping(value="/getTalentQuestion" ,method=RequestMethod.GET)
-    public List<TalentQuestion>  getTalentQuestion(HttpServletRequest request)
-    {
-    	List<TalentQuestion> questions=service.getTalentQuestions();
-    	System.out.println(questions);
-    	System.out.println("satya");
-    	return questions ;
-    }
- 
-    // URL:
-    // http://localhost:8080/SomeContextPath/employees
-    // http://localhost:8080/SomeContextPath/employees.xml
-    // http://localhost:8080/SomeContextPath/employees.json
+
+	@Autowired
+	private TalentPoolService service;
+
+	@RequestMapping("/")
+	@ResponseBody
+	public String welcome() {
+		return "Welcome to RestTemplate Example.";
+	}
+
+	@RequestMapping(value = "/getTalentQuestion", method = RequestMethod.GET)
+	public List<TalentQuestion> getTalentQuestion(HttpServletRequest request) {
+		
+		List<TalentQuestion> questions = service.getTalentQuestions();
+		
+		return questions;
+	}
+
+	@RequestMapping(value = "/Registration", method = RequestMethod.GET)
+	public ModelAndView getCandidatePage(Map<String, Object> model,HttpSession session) {
+		
+		return new ModelAndView("register");
+	}
+
+	//this method use to store candidateInformation in talent_candidate_information table//
+	
+	@RequestMapping(value = "/candidateInformation", method = RequestMethod.POST)
+	public @ResponseBody CandidateInformation saveCandidateInformation(@ModelAttribute CandidateInformation information ,HttpSession session) {
+		
+		return service.saveCandidateInformation(information);
+	}
+	
+	//this method use to store candidateExperience in talent_candidate_experience table//
+	
+	@RequestMapping(value = "/candidateExperience", method = RequestMethod.POST)
+	public @ResponseBody Talent_candidate_experience saveCandidateExperience(@ModelAttribute Talent_candidate_experience experience ,HttpSession session) {
+		
+		return service.saveCandidateExperience(experience);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	// URL:
+	// http://localhost:8080/SomeContextPath/employees
+	// http://localhost:8080/SomeContextPath/employees.xml
+	// http://localhost:8080/SomeContextPath/employees.json
 	/*
 	 * @RequestMapping(value = "/employees", // method = RequestMethod.GET, //
 	 * produces = { MediaType.APPLICATION_JSON_VALUE, //
@@ -107,5 +149,5 @@ public class TalentPoolApplicationMainController {
 	 * 
 	 * employeeDAO.deleteEmployee(empNo); }
 	 */
- 
+
 }
