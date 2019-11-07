@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.yotabytes.talentpool.dao.TalentPoolDAO;
 import com.yotabytes.talentpool.model.CandidateInformation;
 import com.yotabytes.talentpool.model.TalentQuestion;
+import com.yotabytes.talentpool.model.Talent_candidate_experience;
 import com.yotabytes.talentpool.util.AdminQueryConstant;
 
 import org.hibernate.Session;
@@ -24,8 +25,6 @@ public class DAOimplemaintation implements TalentPoolDAO {
 
 	@Autowired
 	public JdbcTemplate jdbcTemplate;
-	
-	
 
 	@Override
 	public List<TalentQuestion> getTalentQuestion() {
@@ -56,6 +55,46 @@ public class DAOimplemaintation implements TalentPoolDAO {
 		return questions;
 
 	}
-	
+
+	@Override
+	public CandidateInformation saveCandidateInformation(CandidateInformation information) {
+		try {
+			String sql = AdminQueryConstant.SAVE_CANDIDATE_INFORMATION;
+			jdbcTemplate.update(sql,
+					new Object[] { information.getCandidate_uniqeId(),
+							information.getFirst_name(),
+							information.getLast_name(),
+							information.getContact_number(),
+							information.getEmail_id(),
+							information.getLocation(),
+							information.getCollage_name(), 
+							information.getPassing_year(), });
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		return information;
+	}
+
+	@Override
+	public Talent_candidate_experience saveCandidateExperience(Talent_candidate_experience experience) {
+		try {
+			String sql = AdminQueryConstant.SAVE_CANDIDATE_EXPERIENCE;
+
+			jdbcTemplate.update(sql,
+					new Object[] { experience.getCandidate_uniqueId(),
+							experience.getProject_name(),
+							experience.getStart_date(),
+							experience.getEnd_date(),
+							experience.getTechnology_used(),
+							experience.getDescription(),
+
+					});
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		return experience;
+	}
 
 }

@@ -12,24 +12,32 @@ import javax.persistence.Table;
 public class Talent_candidate_experience {
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-	private Integer id;
+	private int id;
+	private String candidate_uniqueId;
 	private String project_name;
 	private Date start_date;
 	private Date end_date;
 	private String Technology_used;
 	private String description;
 	
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
+	
 	public String getProject_name() {
 		return project_name;
 	}
 	public void setProject_name(String project_name) {
 		this.project_name = project_name;
+	}
+	public String getCandidate_uniqueId() {
+		return candidate_uniqueId;
+	}
+	public void setCandidate_uniqueId(String candidate_uniqueId) {
+		this.candidate_uniqueId = candidate_uniqueId;
 	}
 	public Date getStart_date() {
 		return start_date;

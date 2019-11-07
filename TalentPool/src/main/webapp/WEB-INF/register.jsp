@@ -49,7 +49,7 @@
 
 							<div class="col-xs-6">
 								<label for="first_name"><h4>First name</h4></label> <input
-									type="text" class="form-control" name="firstname"
+									type="text" class="form-control" name="first_name"
 									id="first_name" placeholder="first name"
 									title="enter your first name if any.">
 							</div>
@@ -58,7 +58,7 @@
 
 							<div class="col-xs-6">
 								<label for="last_name"><h4>Last name</h4></label> <input
-									type="text" class="form-control" name="lastname"
+									type="text" class="form-control" name="last_name"
 									id="last_name" placeholder="last name"
 									title="enter your last name if any.">
 							</div>
@@ -76,7 +76,7 @@
 						<div class="form-group">
 							<div class="col-xs-6">
 								<label for="mobile"><h4>Mobile</h4></label> <input type="text"
-									class="form-control" name="mobile" id="mobile"
+									class="form-control" name="contact_number" id="mobile"
 									placeholder="enter mobile number"
 									title="enter your mobile number if any.">
 							</div>
@@ -85,7 +85,7 @@
 
 							<div class="col-xs-6">
 								<label for="email"><h4>Email</h4></label> <input type="email"
-									class="form-control" name="emailId" id="email"
+									class="form-control" name="email_id" id="email"
 									placeholder="you@email.com" title="enter your email.">
 							</div>
 						</div>

@@ -9,9 +9,10 @@ import javax.persistence.Table;
 @Entity
 @Table( name="talent_candidate_information" )
 public class CandidateInformation {
+	
 	@Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-	private Integer candidate_id;
+	private int candidate_id;
+	private String candidate_uniqeId;
 	private String first_name;
 	private String last_name;
 	private String location;
@@ -25,6 +26,12 @@ public class CandidateInformation {
 	}
 	public void setCandidate_id(int candidate_id) {
 		this.candidate_id = candidate_id;
+	}
+	public String getCandidate_uniqeId() {
+		return candidate_uniqeId;
+	}
+	public void setCandidate_uniqeId(String candidate_uniqeId) {
+		this.candidate_uniqeId = candidate_uniqeId;
 	}
 	public String getFirst_name() {
 		return first_name;
