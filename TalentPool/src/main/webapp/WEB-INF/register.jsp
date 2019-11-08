@@ -124,13 +124,85 @@
 					<h2></h2>
 
 					<hr>
-					<form class="form" action="##" method="post" id="registrationForm">
+					<form class="form" action="saveQuestionAnswer" method="post" id="registrationForm">
 						
+						<div class="form-group">  
+							<div class="col-xs-6">
+
+								What are you looking for ?<input type="hidden" class="form-control" name="question_1"
+									id="first_name" value="1" disabled></br>
+								 <select	class="form-control buttom" name="TalentQuestion">
+
+									<option value="Full time">Full time</option>
+									<option value="Part time">Part time</option>
+									<option value="Internship">Internship</option>
+									
+								</select>
+
+							</div>
+						</div><br>
 						<div class="form-group">
 							<div class="col-xs-6">
 
-								what u want ?<input type="text" class="form-control" name="first_name"
-									id="first_name" value="1" disabled><br>
+								Where would you like  to work ?<input type="hidden" class="form-control" name="question_2"
+									id="first_name" value="2" disabled></br>
+								 <select	class="form-control buttom" name="TalentQuestion">
+
+									<option value="New York">New York</option>
+									<option value="Los Angeles">Los Angeles</option>
+									<option value="Chicago">Chicago</option>
+									<option value="Washington">Washington</option>
+									<option value="Washington">San Francisco</option>
+									<option value="Washington">Boston</option>
+									<option value="Washington">Dallas</option>
+									<option value="Washington">Anywhere</option>
+								</select>
+
+							</div>
+						</div>
+						<br>
+						<div class="form-group">
+							<div class="col-xs-6">
+
+								which industries are you on radar Internet & Software ?<input type="hidden" class="form-control" name="question_3"
+									id="first_name" value="3" disabled><br>
+								 <select	class="form-control buttom" name="TalentQuestion">
+
+									<option value="Computer Networking">Computer Networking</option>
+									<option value="Investment banking">Investment banking</option>
+									<option value="Research">Research</option>
+									<option value="Healthcare">Healthcare</option>
+									<option value="Medical devices">Medical devices</option>
+									<option value="defense">defense</option>
+								</select>
+
+							</div>
+						</div>
+						<br>
+						<div class="form-group">
+							<div class="col-xs-6">
+
+		 						Types of Employers ?<input type="hidden" class="form-control" name="question_4"
+									id="first_name" value="4" disabled><br>
+								 <select	class="form-control buttom" name="TalentQuestion">
+
+									<option value="Start up">Start up</option>
+									<option value="High Growth">High Growth</option>
+									<option value="Established">Established</option>
+									<option value="Non Profit">Non Profit</option>
+									<option value="Large sized company">Large sized company</option>
+									<option value="Mid Sized company">Mid Sized company</option>
+									<option value="Small Company">Small Company</option>
+								</select>
+
+							</div>
+						</div>
+						<br>
+						<div class="form-group">
+							<div class="col-xs-6">
+
+								what u want ?<input type="hidden" class="form-control" name="question_5"
+									id="first_name" value="5" disabled><br>
 								 <select	class="form-control buttom" name="TalentQuestion">
 
 									<option value="1">satya</option>
@@ -141,71 +213,8 @@
 
 							</div>
 						</div>
-						<div class="form-group">
-							<div class="col-xs-6">
-
-								what u want ?<input type="text" class="form-control" name="first_name"
-									id="first_name" value="1" disabled><br>
-								 <select	class="form-control buttom" name="TalentQuestion">
-
-									<option value="1">satya</option>
-									<option value="">nucigent</option>
-									<option value="">satya</option>
-									<option value="">jitesh</option>
-								</select>
-
-							</div>
-						</div>
 						
-						<div class="form-group">
-							<div class="col-xs-6">
-
-								what u want ?<input type="text" class="form-control" name="first_name"
-									id="first_name" value="1" disabled><br>
-								 <select	class="form-control buttom" name="TalentQuestion">
-
-									<option value="1">satya</option>
-									<option value="">nucigent</option>
-									<option value="">satya</option>
-									<option value="">jitesh</option>
-								</select>
-
-							</div>
-						</div>
-						
-						<div class="form-group">
-							<div class="col-xs-6">
-
-		 						what u want ?<input type="text" class="form-control" name="first_name"
-									id="first_name" value="1" disabled><br>
-								 <select	class="form-control buttom" name="TalentQuestion">
-
-									<option value="1">satya</option>
-									<option value="">nucigent</option>
-									<option value="">satya</option>
-									<option value="">jitesh</option>
-								</select>
-
-							</div>
-						</div>
-						
-						<div class="form-group">
-							<div class="col-xs-6">
-
-								what u want ?<input type="text" class="form-control" name="first_name"
-									id="first_name" value="1" disabled><br>
-								 <select	class="form-control buttom" name="TalentQuestion">
-
-									<option value="1">satya</option>
-									<option value="">nucigent</option>
-									<option value="">satya</option>
-									<option value="">jitesh</option>
-								</select>
-
-							</div>
-						</div>
-						
-
+<br>
 
 						<div class="form-group">
 							<div class="col-xs-12">
