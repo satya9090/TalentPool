@@ -29,26 +29,16 @@ public class DAOimplemaintation implements TalentPoolDAO {
 	@Override
 	public List<TalentQuestion> getTalentQuestion() {
 
-		String sql = AdminQueryConstant.GET_QUESTION;
+		String sql = AdminQueryConstant.GET_QUESTION1;
 		List<TalentQuestion> questions = jdbcTemplate.query(sql, new RowMapper<TalentQuestion>() {
 
 			@Override
 			public TalentQuestion mapRow(ResultSet rs, int rownumber) throws SQLException {
 				TalentQuestion question = new TalentQuestion();
-				question.setQuestion_id(rs.getInt(1));
-				question.setQuestion_name(rs.getString(2));
-				question.setOption_1(rs.getString(3));
-				question.setOption_2(rs.getString(4));
-				question.setOption_3(rs.getString(5));
-				question.setOption_4(rs.getString(6));
-				question.setOption_5(rs.getString(7));
-				question.setOption_6(rs.getString(8));
-				question.setOption_7(rs.getString(9));
-				question.setOption_8(rs.getString(10));
-				question.setOption_9(rs.getString(11));
-				question.setOption_10(rs.getString(12));
-				question.setIsActive(rs.getString(13));
-
+				question.setQuestion_id(rs.getInt(2));
+				question.setQuestion_name(rs.getString(3));
+				question.setAnswer_option(rs.getString(4));
+				question.setQuestion_answer_id(rs.getInt(1));
 				return question;
 			}
 		});
@@ -63,12 +53,17 @@ public class DAOimplemaintation implements TalentPoolDAO {
 			jdbcTemplate.update(sql,
 					new Object[] { information.getCandidate_uniqeId(),
 							information.getFirst_name(),
+							information.getMiddle_name(),
 							information.getLast_name(),
 							information.getContact_number(),
 							information.getEmail_id(),
+							information.getAlternate_email_id(),
 							information.getLocation(),
-							information.getCollage_name(), 
-							information.getPassing_year(), });
+							information.getInstitute_name(), 
+							information.getPassing_year(), 
+							information.getGrade(),
+							information.getGender(),
+			});
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

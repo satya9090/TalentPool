@@ -44,7 +44,8 @@
 			<div class="tab-content">
 				<div class="tab-pane active" id="home">
 					<hr>
-					<form class="form" action="candidateInformation" method="post" id="registrationForm">
+					<form class="form" action="candidateInformation" method="post"
+						id="registrationForm">
 						<div class="form-group">
 
 							<div class="col-xs-6">
@@ -52,6 +53,15 @@
 									type="text" class="form-control" name="first_name"
 									id="first_name" placeholder="first name"
 									title="enter your first name if any.">
+							</div>
+						</div>
+						<div class="form-group">
+
+							<div class="col-xs-6">
+								<label for="middle_name"><h4>middle name</h4></label> <input
+									type="text" class="form-control" name="middle_name"
+									id="middle_name" placeholder="last name"
+									title="enter your middle_name if any.">
 							</div>
 						</div>
 						<div class="form-group">
@@ -67,7 +77,24 @@
 						<div class="form-group">
 
 							<div class="col-xs-6">
-								<label for="phone"><h4>Location</h4></label> <input type="text"
+								<label for="email"><h4>Email id</h4></label> <input type="email"
+									class="form-control" name="email_id" id="email"
+									placeholder="you@email.com" title="enter your email.">
+							</div>
+						</div>
+						
+						<div class="form-group">
+
+							<div class="col-xs-6">
+								<label for="alternate_email_id"><h4> Alternate Email id</h4></label> <input type="email"
+									class="form-control" name="alternate_email_id" id="alternate_email_id"
+									placeholder="you@email.com" title="enter your alternate_email_id">
+							</div>
+						</div>
+						<div class="form-group">
+
+							<div class="col-xs-6">
+								<label for="phone"><h4>Location id:</h4></label> <input type="text"
 									class="form-control" name="location" id="location"
 									placeholder="somewhere" title="enter a location">
 							</div>
@@ -75,43 +102,65 @@
 
 						<div class="form-group">
 							<div class="col-xs-6">
-								<label for="mobile"><h4>Mobile</h4></label> <input type="text"
+								<label for="mobile"><h4>Contact_number</h4></label> <input type="text"
 									class="form-control" name="contact_number" id="mobile"
 									placeholder="enter mobile number"
 									title="enter your mobile number if any.">
 							</div>
 						</div>
+
 						<div class="form-group">
 
 							<div class="col-xs-6">
-								<label for="email"><h4>Email</h4></label> <input type="email"
-									class="form-control" name="email_id" id="email"
-									placeholder="you@email.com" title="enter your email.">
+								<label for="collageName"><h4>institute name</h4></label> <input
+									type="text" class="form-control" id="collage_name"
+									name="institute_name" placeholder="collage_name"
+									title="enter your collage_name">
 							</div>
 						</div>
-						 <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                              <label for="collageName"><h4>collage name</h4></label>
-                              <input type="text" class="form-control" id="collage_name" name="collage_name" placeholder="collage_name" title="enter your collage_name">
-                          </div>
-                      </div>
-                      
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                              <label for="passing_year"><h4>Passing Year</h4></label>
-                              <input type="text" class="form-control" id="passing_year" name="passing_year" placeholder="passing_year" title="enter your passing_year">
-                          </div>
-                      </div>
 
-						 <div class="form-group">
-                           <div class="col-xs-12">
-                                <br>
-                              	<button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
-                               
-                            </div>
-                      </div>
+						<div class="form-group">
+
+							<div class="col-xs-6">
+								<label for="passing_year"><h4>Passing Year</h4></label> <input
+									type="text" class="form-control" id="passing_year"
+									name="passing_year" placeholder="passing_year"
+									title="enter your passing_year">
+							</div>
+						</div>
+						<div class="form-group">
+
+							<div class="col-xs-6">
+								<label for="Grade"><h4>Grade</h4></label> <input
+									type="text" class="form-control" id="grade"
+									name="grade" placeholder="grade"
+									title="enter your grade">
+							</div>
+						</div><br>
+						<div class="form-group">
+
+							<div class="col-xs-6">
+								<label for="passing_year"><h4>Gender</h4></label>
+								 <select class="form-control buttom"
+									name="gender">
+
+									<option value="Male">Male</option>
+									<option value="Female">Female</option>
+									<option value="Other">Other</option>
+
+								</select>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-xs-12">
+								<br>
+								<button class="btn btn-lg btn-success" type="submit">
+									<i class="glyphicon glyphicon-ok-sign"></i> Save
+								</button>
+
+							</div>
+						</div>
 					</form>
 
 					<hr>
@@ -120,33 +169,37 @@
 				<!--/tab-pane-->
 				<div class="tab-pane" id="messages">
 
-					
+
 					<h2></h2>
 
 					<hr>
-					<form class="form" action="saveQuestionAnswer" method="post" id="registrationForm">
-						
-						<div class="form-group">  
+					<form class="form" action="saveQuestionAnswer" method="post"
+						id="registrationForm">
+
+						<div class="form-group"> 
 							<div class="col-xs-6">
 
-								What are you looking for ?<input type="hidden" class="form-control" name="question_1"
-									id="first_name" value="1" disabled></br>
-								 <select	class="form-control buttom" name="TalentQuestion">
+								What are you looking for ?<input type="hidden"
+									class="form-control" name="question_1" id="first_name"
+									value="1" disabled></br> <select class="form-control buttom"
+									name="TalentQuestion">
 
 									<option value="Full time">Full time</option>
 									<option value="Part time">Part time</option>
 									<option value="Internship">Internship</option>
-									
+
 								</select>
 
 							</div>
-						</div><br>
+						</div>
+						<br>
 						<div class="form-group">
 							<div class="col-xs-6">
 
-								Where would you like  to work ?<input type="hidden" class="form-control" name="question_2"
-									id="first_name" value="2" disabled></br>
-								 <select	class="form-control buttom" name="TalentQuestion">
+								Where would you like to work ?<input type="hidden"
+									class="form-control" name="question_2" id="first_name"
+									value="2" disabled></br> <select class="form-control buttom"
+									name="TalentQuestion">
 
 									<option value="New York">New York</option>
 									<option value="Los Angeles">Los Angeles</option>
@@ -164,11 +217,13 @@
 						<div class="form-group">
 							<div class="col-xs-6">
 
-								which industries are you on radar Internet & Software ?<input type="hidden" class="form-control" name="question_3"
-									id="first_name" value="3" disabled><br>
-								 <select	class="form-control buttom" name="TalentQuestion">
+								which industries are you on radar Internet & Software ?<input
+									type="hidden" class="form-control" name="question_3"
+									id="first_name" value="3" disabled><br> <select
+									class="form-control buttom" name="TalentQuestion">
 
-									<option value="Computer Networking">Computer Networking</option>
+									<option value="Computer Networking">Computer
+										Networking</option>
 									<option value="Investment banking">Investment banking</option>
 									<option value="Research">Research</option>
 									<option value="Healthcare">Healthcare</option>
@@ -182,15 +237,16 @@
 						<div class="form-group">
 							<div class="col-xs-6">
 
-		 						Types of Employers ?<input type="hidden" class="form-control" name="question_4"
-									id="first_name" value="4" disabled><br>
-								 <select	class="form-control buttom" name="TalentQuestion">
+								Types of Employers ?<input type="hidden" class="form-control"
+									name="question_4" id="first_name" value="4" disabled><br>
+								<select class="form-control buttom" name="TalentQuestion">
 
 									<option value="Start up">Start up</option>
 									<option value="High Growth">High Growth</option>
 									<option value="Established">Established</option>
 									<option value="Non Profit">Non Profit</option>
-									<option value="Large sized company">Large sized company</option>
+									<option value="Large sized company">Large sized
+										company</option>
 									<option value="Mid Sized company">Mid Sized company</option>
 									<option value="Small Company">Small Company</option>
 								</select>
@@ -201,9 +257,9 @@
 						<div class="form-group">
 							<div class="col-xs-6">
 
-								what u want ?<input type="hidden" class="form-control" name="question_5"
-									id="first_name" value="5" disabled><br>
-								 <select	class="form-control buttom" name="TalentQuestion">
+								what u want ?<input type="hidden" class="form-control"
+									name="question_5" id="first_name" value="5" disabled><br>
+								<select class="form-control buttom" name="TalentQuestion">
 
 									<option value="1">satya</option>
 									<option value="">nucigent</option>
@@ -213,8 +269,8 @@
 
 							</div>
 						</div>
-						
-<br>
+
+						<br>
 
 						<div class="form-group">
 							<div class="col-xs-12">
@@ -233,7 +289,8 @@
 
 
 					<hr>
-					<form class="form" action="candidateExperience" method="post" id="registrationForm">
+					<form class="form" action="candidateExperience" method="post"
+						id="registrationForm">
 						<div class="form-group">
 
 							<div class="col-xs-6">

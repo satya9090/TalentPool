@@ -1,8 +1,7 @@
 package com.yotabytes.talentpool.model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -14,12 +13,17 @@ public class CandidateInformation {
 	private int candidate_id;
 	private String candidate_uniqeId;
 	private String first_name;
+	private String middle_name;
 	private String last_name;
 	private String location;
 	private Long contact_number;
 	private String email_id;
-	private String collage_name;
+	private String alternate_email_id;
+	private String institute_name;
 	private String passing_year;
+	private String grade;
+	private String gender;
+	
 	
 	public int getCandidate_id() {
 		return candidate_id;
@@ -38,6 +42,12 @@ public class CandidateInformation {
 	}
 	public void setFirst_name(String first_name) {
 		this.first_name = first_name;
+	}
+	public String getMiddle_name() {
+		return middle_name;
+	}
+	public void setMiddle_name(String middle_name) {
+		this.middle_name = middle_name;
 	}
 	public String getLast_name() {
 		return last_name;
@@ -63,11 +73,17 @@ public class CandidateInformation {
 	public void setEmail_id(String email_id) {
 		this.email_id = email_id;
 	}
-	public String getCollage_name() {
-		return collage_name;
+	public String getAlternate_email_id() {
+		return alternate_email_id;
 	}
-	public void setCollage_name(String collage_name) {
-		this.collage_name = collage_name;
+	public void setAlternate_email_id(String alternate_email_id) {
+		this.alternate_email_id = alternate_email_id;
+	}
+	public String getInstitute_name() {
+		return institute_name;
+	}
+	public void setInstitute_name(String institute_name) {
+		this.institute_name = institute_name;
 	}
 	public String getPassing_year() {
 		return passing_year;
@@ -75,6 +91,20 @@ public class CandidateInformation {
 	public void setPassing_year(String passing_year) {
 		this.passing_year = passing_year;
 	}
+	public String getGrade() {
+		return grade;
+	}
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	
+	
 	
 	
 	
